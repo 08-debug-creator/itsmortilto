@@ -1,0 +1,90 @@
+.watch-live-button, .twitch, .follow-button, .discord-button {
+  text-decoration: none;
+  color: black; 
+}
+
+.release-info {
+  color: white;
+  font-size: 30px;
+  margin-bottom: 30px;
+  margin-left: 6px;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 500px;
+  background: linear-gradient(-45deg, rgb(64, 0, 124),
+   rgb(119, 29, 72),
+   rgb(60, 60, 141), 
+   rgb(255, 0, 0));
+  margin-bottom: 40px;
+  border-radius: 16px;
+  position: relative;
+  animation: movegradient 10s ease infinite;
+  background-size: 400% 400%;
+  padding-bottom: 90px;
+  margin-bottom: 90px;
+  margin-top: 30px;
+}
+
+@keyframes movegradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; } 
+}
+
+.hero-logo {
+  width: 600px;
+  margin-bottom: 20px;
+}
+
+.design-content {
+  content:"";
+  position: absolute;
+  width: 100.3%;
+  background: linear-gradient(to bottom right, rgb(0, 217, 255), rgb(226, 9, 161));
+  height: 100.6%;
+  border-radius: 16px;
+  z-index:-1;
+  top: -0.3%;
+}
+
+.textfun {
+  position: absolute;
+  top: 350px;
+  font-size: 24px;
+  color: rgb(192, 192, 192);
+  text-align: center;
+}
+
+.go-live {
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+}
+
+.watch-live-button {
+  position: absolute;
+  top: 400px;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  background: linear-gradient(90deg, rgb(125, 22, 221), rgb(76, 7, 97));
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  filter: blur(60%);
+  opacity: 0.8;
+  transition: 0.3s ease;
+}
+
+.watch-live-button:hover {
+  top: 397px;
+  box-shadow: 0 0 15px ,0 0 45px rgb(255, 0, 242);
+}

@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Clips</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Roboto, Arial, sans-serif;
+      background: rgb(30, 10, 44);
+      padding: 20px;
+      margin: 0;
+      color: white;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: clamp(34px, 6vw, 60px);
+      color: rgb(206, 206, 206);
+    }
+
+    .back-button {
+      display: inline-block;
+      margin-bottom: 30px;
+      padding: 10px 20px;
+      background-color: #9147ff;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .back-button:hover {
+      background-color: #772ce8;
+    }
+
+    .clips-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 20px;
+    }
+
+    .clip-card {
+      background-color: rgb(45, 18, 61);
+      border-radius: 18px;
+      padding: 8px;
+      transition: 0.3s ease;
+    }
+
+    .clip-card:hover {
+      box-shadow: 5px 5px 9px rgba(212, 0, 255, 0.5);
+      transform: translate(5px, 5px);
+    }
+
+    .thumbnail-row {
+      position: relative;
+      margin-bottom: 8px;
+    }
+
+    .thumbnail {
+      width: 100%;
+      display: block;
+      border-radius: 14px;
+    }
+
+    .clip-time,
+    .clip-views,
+    .clip-posted-time {
+      font-size: 12px;
+      font-weight: 500;
+      padding: 4px 8px;
+      background-color: rgba(0, 0, 0, 0.7);
+      color: white;
+      position: absolute;
+      border-radius: 10px;
+    }
+
+    .clip-time {
+      top: 8px;
+      left: 8px;
+    }
+
+    .clip-views {
+      bottom: 8px;
+      left: 8px;
+    }
+
+    .clip-posted-time {
+      bottom: 8px;
+      right: 8px;
+    }
+
+    .clip-info-grid {
+      display: grid;
+      grid-template-columns: 50px 1fr;
+      gap: 8px;
+      align-items: start;
+    }
+
+    .profile-picture {
+      width: 36px;
+      height: 54px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-left: 4px;
+    }
+
+    .clip-title {
+      margin: 0 0 5px 0;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 20px;
+      color: rgb(192, 192, 192);
+    }
+
+    .clip-author,
+    .clip-stats {
+      font-size: 12px;
+      color: rgb(121, 121, 121);
+      margin: 0 0 4px 0;
+    }
+
+    .clip-link {
+      text-decoration: none;
+      color: inherit;
+    }
+  </style>
+</head>
+<body>
+
+  <a href="index.html" class="back-button">← Back to Home</a>
+
+  <h1>All My Clips</h1>
+
+  <div class="clips-container" id="clipsContainer"></div>
+
+  <script>
+    const clips = [
+      {
+        title: "asdasdfssdffd",
+        image: "clips/clip-1.jpg",
+        link: "https://www.twitch.tv/itsmortilto/clip/ModernAdventurousWhalePicoMause-2eRKApKko1WnPPnQ?filter=clips&range=all&sort=time",
+        time: "0:59",
+        views: "2 views",
+        posted: "10 days ago",
+        author: "itsmortilto",
+        clippedBy: "Klippet av itsmortilto",
+        profile: "pictures/1-1.jpg",
+        date: "2026-03-18"
+      },
+      {
+        title: "BRO HOW DID THE BOSS RESPAWN",
+        image: "clips/clip-2.jpg",
+        link: "https://www.twitch.tv/itsmortilto/clip/ScrumptiousBelovedHamsterRaccAttack-TcQZ1jEx6-89MYeL?filter=clips&range=all&sort=time",
+        time: "0:17",
+        views: "2 views",
+        posted: "25 days ago",
+        author: "itsmortilto",
+        clippedBy: "Klippet av nek_tech",
+        profile: "pictures/1-2.jpg",
+        date: "2026-03-17"
+      },
+      {
+        title: "🔴🔴playing with panda...... pause. just ask for the discord invite🔴🔴",
+        image: "clips/clip-3.jpg",
+        link: "https://www.twitch.tv/itsmortilto/clip/CharmingSecretiveKoalaLeeroyJenkins-VuaVqjYhPQIzbgLa?filter=clips&range=all&sort=time",
+        time: "0:30",
+        views: "2 views",
+        posted: "2 years ago",
+        author: "itsmortilto",
+        clippedBy: "Klippet av itsmortilto",
+        profile: "pictures/1-3.jpg",
+        date: "2026-03-16"
+      },
+      {
+        title: "What did he say?",
+        image: "clips/clip-4.jpg",
+        link: "https://www.twitch.tv/itsmortilto/clip/GentleMoistNightingaleAMPTropPunch-vqVNlkHLD_PDJ5nA?filter=clips&range=all&sort=time",
+        time: "0:30",
+        views: "2 views",
+        posted: "24 days ago",
+        author: "itsmortilto",
+        clippedBy: "Klippet av mistykpg",
+        profile: "pictures/1-2.jpg",
+        date: "2026-03-16"
+      },
+      {
+        title: "i would love",
+        image: "clips/clip-5.jpg",
+        link: "https://www.twitch.tv/itsmortilto/clip/ConfidentClearArmadilloFloof-9PKY-znUGmFkpR9m?filter=clips&range=all&sort=time",
+        time: "0:29",
+        views: "2 views",
+        posted: "14 days ago",
+        author: "itsmortilto",
+        clippedBy: "Klippet av itsmortilto",
+        profile: "pictures/1-4.jpg",
+        date: "2026-03-16"
+      },
+      {
+        title: "a small setback",
+        image: "clips/clip-6.jpg",
+        link: "https://www.twitch.tv/itsmortilto/clip/ShakingSpunkyBubbleteaDatSheffy-4Amrlsl2BG4RgQIw?filter=clips&range=all&sort=time",
+        time: "0:17",
+        views: "2 views",
+        posted: "23 days ago",
+        author: "itsmortilto",
+        clippedBy: "Klippet av itsmortilto",
+        profile: "pictures/1-2.jpg",
+        date: "2026-03-16"
+      },
+      {
+        title: "talking to chat",
+        image: "clips/clip-7.jpg",
+        link: "https://www.twitch.tv/itsmortilto/clip/CrispySmoothLeopardItsBoshyTime-FqfpggDSMJ7NqmMY?filter=clips&range=all&sort=time",
+        time: "0:30",
+        views: "2 views",
+        posted: "21 days ago",
+        author: "itsmortilto",
+        clippedBy: "Klippet av itsmortilto",
+        profile: "pictures/1-5.png",
+        date: "2026-03-16"
+      },
+      {
+        title: "drgdfgdfgdfggf",
+        image: "clips/clip-9.jpg",
+        link: "https://www.twitch.tv/itsmortilto/clip/SwissCrunchyClipsmomSmoocherZ-uIg5JtOPB_9wCWJP?filter=clips&range=all&sort=time",
+        time: "0:29",
+        views: "1 views",
+        posted: "10 days ago",
+        author: "itsmortilto",
+        clippedBy: "Klippet av itsmortilto",
+        profile: "pictures/1-1.jpg",
+        date: "2026-03-16"
+      },
+      {
+        title: "the mousepad",
+        image: "clips/clip-8.jpg",
+        link: "https://www.twitch.tv/itsmortilto/clip/CallousAcceptableChickenKappaRoss-bpeS4SNYvXMwAL8c?filter=clips&range=all&sort=time",
+        time: "0:29",
+        views: "2 views",
+        posted: "10 days ago",
+        author: "itsmortilto",
+        clippedBy: "Klippet av itsmortilto",
+        profile: "pictures/1-1.jpg",
+        date: "2026-03-16"
+      },
+      {
+        title: "hardest difficulty is crazy",
+        image: "clips/clip-10.jpg",
+        link: "https://www.twitch.tv/itsmortilto/clip/CheerfulSpunkyLardJonCarnage-4shGZWe7Tz8GsZOj?filter=clips&range=all&sort=time",
+        time: "0:30",
+        views: "1 views",
+        posted: "1 month ago",
+        author: "itsmortilto",
+        clippedBy: "Klippet av itsmortilto",
+        profile: "pictures/1-2.jpg",
+        date: "2026-03-16"
+      },
+      {
+        title: "game sens",
+        image: "clips/clip-11.jpg",
+        link: "https://www.twitch.tv/itsmortilto/clip/CourageousLittleShieldDoubleRainbow-dW1hCEnu_6eDiMak?filter=clips&range=all&sort=time",
+        time: "0:15",
+        views: "2 views",
+        posted: "19 days ago",
+        author: "itsmortilto",
+        clippedBy: "Klippet av itsmortilto",
+        profile: "pictures/1-5.png",
+        date: "2026-03-16"
+      },
+      {
+        title: "green fn",
+        image: "clips/clip-12.jpg",
+        link: "https://www.twitch.tv/itsmortilto/clip/CleverChillyEmuWOOP-gPcQsIGGQE2u7iYy?filter=clips&range=all&sort=time",
+        time: "0:16",
+        views: "3 views",
+        posted: "22 days ago",
+        author: "itsmortilto",
+        clippedBy: "Klippet av itsmortilto",
+        profile: "pictures/1-5.png",
+        date: "2026-03-16"
+      },
+      {
+        title: "Just eating and Talking. Rdr2 storymode pt 3",
+        image: "clips/clip-13.jpg",
+        link: "https://www.twitch.tv/itsmortilto/clip/NaiveRelentlessBeanArgieB8-LGiIPaGfWe4YhBDX?filter=clips&range=all&sort=time",
+        time: "0:30",
+        views: "3 views",
+        posted: "4 years ago",
+        author: "itsmortilto",
+        clippedBy: "Klippet av itsmortilto",
+        profile: "pictures/1-6",
+        date: "2026-03-16"
+      },
+      {
+        title: "🔴🔴norsk stream. just ask for the discord invite🔴🔴",
+        image: "clips/clip-14.jpg",
+        link: "https://www.twitch.tv/itsmortilto/clip/KitschyCrispyStingraySoBayed-gP-7UHvl6Sn7RJ6H?filter=clips&range=all&sort=time",
+        time: "0:30",
+        views: "4 views",
+        posted: "2 years ago",
+        author: "itsmortilto",
+        clippedBy: "Klippet av itsmortilto",
+        profile: "pictures/1-3.jpg",
+        date: "2026-03-16"
+      },
+      {
+        title: "insane kill",
+        image: "clips/clip-15.jpg",
+        link: "https://www.twitch.tv/itsmortilto/clip/TenuousYummyCheddarGingerPower-UDANhRVR48yda1CG?filter=clips&range=all&sort=time",
+        time: "0:10",
+        views: "3 views",
+        posted: "20 days ago",
+        author: "itsmortilto",
+        clippedBy: "Klippet av weldors23",
+        profile: "pictures/1-5.png",
+        date: "2026-03-16"
+      },
+      {
+        title: "yes or no",
+        image: "clips/clip-16.jpg",
+        link: "https://www.twitch.tv/itsmortilto/clip/EasyBlatantLyrebirdEagleEye-A1fXTnDLGZUiQ4u4?filter=clips&range=all&sort=time",
+        time: "0:12",
+        views: "2 views",
+        posted: "16 days ago",
+        author: "itsmortilto",
+        clippedBy: "Klippet av itsmortilto",
+        profile: "pictures/1-4.jpg",
+        date: "2026-03-16"
+      },
+      {
+        title: "STOWP KNOCKINGGG",
+        image: "clips/clip-17.jpg",
+        link: "https://www.twitch.tv/itsmortilto/clip/SmallCaringBunnyDoubleRainbow-x5AHT5i_Xvv7JbjJ?filter=clips&range=all&sort=time",
+        time: "0:27",
+        views: "3 views",
+        posted: "6 months ago",
+        author: "itsmortilto",
+        clippedBy: "Klippet av xxitz_angelx",
+        profile: "pictures/1-7.jpg",
+        date: "2026-03-16"
+      },
+      {
+        title: "stooop",
+        image: "clips/clip-18.jpg",
+        link: "https://www.twitch.tv/itsmortilto/clip/CrazyImportantGaurPipeHype-b_sRIaHBN4u9mHvR?filter=clips&range=all&sort=time",
+        time: "0:06",
+        views: "3 views",
+        posted: "11 days ago",
+        author: "itsmortilto",
+        clippedBy: "Klippet av weldors23",
+        profile: "pictures/1-1.jpg",
+        date: "2026-03-16"
+      },
+      {
+        title: "huh?",
+        image: "clips/clip-19.jpg",
+        link: "https://www.twitch.tv/itsmortilto/clip/FairHomelyLobsterEleGiggle-5Zm3F66HF9xOVPLN?filter=clips&range=all&sort=time",
+        time: "0:15",
+        views: "3 views",
+        posted: "2 months ago",
+        author: "itsmortilto",
+        clippedBy: "Klippet av itsmortilto",
+        profile: "pictures/1-8.jpg",
+        date: "2026-03-16"
+      },
+      {
+        title: "boy my balls have srhivled",
+        image: "clips/clip-20.jpg",
+        link: "https://www.twitch.tv/itsmortilto/clip/HonorableSincerePoultryPeteZaroll-pyeykvQNN0AecHKH?filter=clips&range=all&sort=time",
+        time: "0:30",
+        views: "4 views",
+        posted: "24 days ago",
+        author: "itsmortilto",
+        clippedBy: "Klippet av weldors23",
+        profile: "pictures/1-2.jpg",
+        date: "2026-03-16"
+      },
+      {
+        title: "my first gta v play through on mouse and keyboard pt.2",
+        image: "clips/clip-21.jpg",
+        link: "https://www.twitch.tv/itsmortilto/clip/SnappySmoothKoupreyAsianGlow-k4hXLQsgmPyWvdPD?filter=clips&range=all&sort=time",
+        time: "0:11",
+        views: "4 views",
+        posted: "3 years ago",
+        author: "itsmortilto",
+        clippedBy: "Klippet av itsmortilto",
+        profile: "pictures/1-9.jpg",
+        date: "2026-03-16"
+      },
+      {
+        title: "i hate this house",
+        image: "clips/clip-22.jpg",
+        link: "https://www.twitch.tv/itsmortilto/clip/AmorphousTrustworthyMilkTF2John-6q3RKtf3VZ6W3hv2?filter=clips&range=all&sort=time",
+        time: "0:30",
+        views: "4 views",
+        posted: "14 days ago",
+        author: "itsmortilto",
+        clippedBy: "Klippet av itsmortilto",
+        profile: "pictures/1-4.jpg",
+        date: "2026-03-16"
+      },
+      {
+        title: "Welcome to mort's stream",
+        image: "clips/clip-23.jpg",
+        link: "https://www.twitch.tv/itsmortilto/clip/IcyViscousGuanacoMVGame-UKG6ztaCKjgKbFaQ?filter=clips&range=all&sort=time",
+        time: "0:28",
+        views: "3 views",
+        posted: "1 month ago",
+        author: "itsmortilto",
+        clippedBy: "Klippet av petula2001",
+        profile: "pictures/1-11.jpg",
+        date: "2026-03-16"
+      },
+      {
+        title: "slip",
+        image: "clips/clip-24.jpg",
+        link: "https://www.twitch.tv/itsmortilto/clip/BraveImpossibleHyenaBatChest-NM82HfuT7rY7Vehw?filter=clips&range=all&sort=time",
+        time: "0:20",
+        views: "109 views",
+        posted: "2 months ago",
+        author: "itsmortilto",
+        clippedBy: "Klippet av itsmortilto",
+        profile: "pictures/1-3.jpg",
+        date: "2026-03-16"
+      },
+      {
+        title: "fly gloomy",
+        image: "clips/clip-25.jpg",
+        link: "https://www.twitch.tv/itsmortilto/clip/UnsightlyCoweringPoxChefFrank-27Z8gBfD_ZwmI7WU?filter=clips&range=all&sort=time",
+        time: "0:07",
+        views: "88 views",
+        posted: "2 months ago",
+        author: "itsmortilto",
+        clippedBy: "Klippet av itsmortilto",
+        profile: "pictures/1-3.jpg",
+        date: "2026-03-16"
+      }
+    ];
+
+    const container = document.getElementById("clipsContainer");
+
+    clips
+      .sort((a, b) => new Date(b.date) - new Date(a.date))
+      .forEach(clip => {
+        const card = document.createElement("div");
+        card.className = "clip-card";
+
+        card.innerHTML = `
+          <div class="thumbnail-row">
+            <a href="${clip.link}" target="_blank" class="clip-link">
+              <img class="thumbnail" src="${clip.image}" alt="${clip.title}">
+            </a>
+            <div class="clip-time">${clip.time}</div>
+            <div class="clip-views">${clip.views}</div>
+            <div class="clip-posted-time">${clip.posted}</div>
+          </div>
+
+          <div class="clip-info-grid">
+            <div class="channel-picture">
+              <img class="profile-picture" src="${clip.profile}" alt="${clip.author}">
+            </div>
+
+            <div class="clip-info">
+              <a href="${clip.link}" target="_blank" class="clip-link">
+                <p class="clip-title">${clip.title}</p>
+              </a>
+              <p class="clip-author">${clip.author}</p>
+              <p class="clip-stats">${clip.clippedBy}</p>
+            </div>
+          </div>
+        `;
+
+        container.appendChild(card);
+      });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MortiltoHere</title>
+    
+    <!-- font style for texts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- stylesheets for CSS -->
+    <link rel="stylesheet" href="styles/body.css">
+    <link rel="stylesheet" href="styles/video.css">
+    <link rel="stylesheet" href="styles/general.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/footer.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+
+    <!-- HTML code for header both Left and Right section-->
+    <div class="header">
+        <div class="header-content">
+          <div class="left-section">
+          <img class="mortilto-logo" src="pictures/mortiltop.png">
+        </div>
+
+        <div class="right-section">
+          <div class="clip-container">
+            <button class="clip" id="clipFlexBtn">Clips</button>
+          </div>
+          
+          <div class="about-container">
+            <button class="about" onclick="scrollToAbout()">About Us</button>
+          </div>
+
+          <div class="twitch-container">
+            <a href="https://www.twitch.tv/itsmortilto" target="_blank" class="twitch">
+              Twitch
+            </a>
+          </div>
+
+          <div class="hamburger-menu-container">
+            <div class="hamburger-menu">
+              <div class="bar1"></div>
+              <div class="bar2"></div>
+              <div class="bar3"></div>
+            </div>
+            <div class="tooltip">Menu</div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero section with logo, subtitle and button -->
+    <div class="hero">
+      <div class="design-content"></div>
+        <img class="hero-logo" src="pictures/mortiltop.png">
+      <div class="textfun">Funny clips. Chaotic moments. <span class="go-live">Live on Twitch.</span></div>
+      <a href="https://www.twitch.tv/itsmortilto/schedule" target="_blank" class="watch-live-button">
+        Watch Live on Twitch
+      </a>
+    </div>
+
+    <!-- Latest clips release info -->
+    <div>
+      <div class="release-info">
+        <p>
+          Latest Clips
+        </p>
+      </div>
+    </div>
+
+    <!-- Containers for clips and videos. one after another-->
+    <div class="video-grid">
+      <div class="video-preview">
+        <div class="thumbnail-row">
+          <a href="https://www.twitch.tv/itsmortilto/clip/CrypticWiseLobsterDBstyle-e7d5_q-Jtubr5xuf" target="_blank" class="video-title-link">
+            <img class="thumbnail" src="pictures/preview.jpg">
+          </a>
+          <div class="video-time">0:11</div>
+          <div class="video-views">27 views</div>
+          <div class="video-posted-time">for 1 month ago</div>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <a class="video-title-link">
+             <img class="profile-picture" src="pictures/518184-52x72.jpg">
+          </a>
+          </div>
+          <div class="video-info">
+            <a class="video-title-link">
+              <p class="video-title">
+              I Hear Everything
+              </p>
+            </a>
+            <a class="video-title-link">
+              <p class="video-author">
+                itsmortilto
+              </p>
+            </a>
+            <p class="video-stats">
+              Klippet av itsmortilto
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="video-preview">
+        <div class="thumbnail-row">
+          <a href="https://www.twitch.tv/itsmortilto/clip/BitterAnnoyingCockroachUncleNox-SqSWxpbgDz5M7PNG?filter=clips&range=all&sort=time" target="_blank" class="video-title-link">
+            <img class="thumbnail" src="pictures/preview-6.jpg">
+          </a>
+          <div class="video-time">0:19</div>
+          <div class="video-views">27 views</div>
+          <div class="video-posted-time">for 1 month ago</div>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="pictures/518184-52x72.jpg">
+          </div>
+          <div class="video-info">
+            <a class="video-title-link">
+              <p class="video-title">
+                B block
+              </p>
+            </a>
+            <p class="video-author">
+              itsmortilto
+            </p>
+            <p class="video-stats">
+              Klippet av ghostfang_17
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="video-preview">
+        <div class="thumbnail-row">
+          <a href="https://www.twitch.tv/itsmortilto/clip/ZealousImpossibleSoybeanFailFish-lZcAocxJrgm4yOke" target="_blank" class="video-title-link">
+            <img class="thumbnail" src="pictures/preview-1.jpg">
+          </a>
+          <div class="video-time">0:28</div>
+          <div class="video-views">24 views</div>
+          <div class="video-posted-time">for 4 months ago</div>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="pictures/1517377137_IGDB-52x72.jpg">
+          </div>
+          <div class="video-info">
+            <a class="video-title-link">
+              <p class="video-title">
+                FAMOUS LAST WORDS
+              </p>
+            </a>
+            <p class="video-author">
+              itsmortilto
+            </p>
+            <p class="video-stats">
+              Klippet av itsmortilto
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="video-preview">
+        <div class="thumbnail-row">
+          <a href="https://www.twitch.tv/itsmortilto/clip/TardyLitigiousPotWutFace-fKN4VZNSQnG9J2TT" target="_blank" class="video-title-link">
+            <img class="thumbnail" src="pictures/preview-2.jpg">
+          </a>
+          <div class="video-time">0:15</div>
+          <div class="video-views">16 views</div>
+          <div class="video-posted-time">for 5 months ago</div>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="pictures/1953774734_IGDB-52x72.jpg">
+          </div>
+          <div class="video-info">
+            <a class="video-title-link">
+              <p class="video-title">
+                F U im putting my airpods back in
+              </p>
+            </a>
+            <p class="video-author">
+              itsmortilto
+            </p>
+            <p class="video-stats">
+              Klippet av itsmortilto
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="video-preview">
+        <div class="thumbnail-row">
+          <a href="https://www.twitch.tv/itsmortilto/clip/StrongCulturedClamHeyGirl-Xj62g3ZlCCoLb1i2?filter=clips&range=all&sort=time" target="_blank" class="video-title-link">
+            <img class="thumbnail" src="pictures/preview-4.jpg">
+          </a>
+          <div class="video-time">0:05</div>
+          <div class="video-views">33 views</div>
+          <div class="video-posted-time">for 5 months ago</div>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="pictures/460630-52x72.jpg">
+          </div>
+          <div class="video-info">
+            <a class="video-title-link">
+              <p class="video-title">
+                What the hell
+              </p>
+            </a>
+            <p class="video-author">
+              itsmortilto
+            </p>
+            <p class="video-stats">
+              Klippet av nelrix_0
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="video-preview">
+        <div class="thumbnail-row">
+          <a href="https://www.twitch.tv/itsmortilto/clip/HedonisticSmallThymeFutureMan-LfaDhu2VH9RPKntS" target="_blank" class="video-title-link">
+            <img class="thumbnail" src="pictures/preview-3.jpg">
+          </a>
+          <div class="video-time">0:14</div>
+          <div class="video-views">56 views</div>
+          <div class="video-posted-time">for 6 months ago</div>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="pictures/1081998272_IGDB-52x72.jpg">
+          </div>
+          <div class="video-info">
+            <a class="video-title-link">
+              <p class="video-title">
+                INTRUSIVE THOUGHT
+              </p>
+            </a>
+            <p class="video-author">
+              itsmortilto
+            </p>
+            <p class="video-stats">
+              Klippet av itsmortilto
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="video-preview">
+        <div class="thumbnail-row">
+          <a href="https://www.twitch.tv/itsmortilto/clip/BraveImpossibleHyenaBatChest-NM82HfuT7rY7Vehw" target="_blank" class="video-title-link">
+            <img class="thumbnail" src="pictures/AT-cm_jDhqJTTPNh37k-62O1XocA-preview-260x147.jpg">
+          </a>
+          <div class="video-time">0:20</div>
+          <div class="video-views">105 views</div>
+          <div class="video-posted-time">for 2 years ago</div>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="pictures/33214-52x72.jpg">
+          </div>
+          <div class="video-info">
+            <a class="video-title-link">
+              <p class="video-title">
+                slip
+              </p>
+            </a>
+            <p class="video-author">
+              itsmortilto
+            </p>
+            <p class="video-stats">
+              Klippet av itsmortilto
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="video-preview">
+        <div class="thumbnail-row">
+          <a href="https://www.twitch.tv/itsmortilto/clip/CallousCrazyGazelleSpicyBoy-3NYbnN-ZqCLtBiGp" target="_blank" class="video-title-link">
+            <img class="thumbnail" src="pictures/AT-cm_aJOpp9zWG5zfmagi7QYhqQ-preview-260x147.jpg">
+          </a>
+          <div class="video-time">0:16</div>
+          <div class="video-views">53 views</div>
+          <div class="video-posted-time">for 2 years ago</div>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="pictures/33214-52x72.jpg">
+          </div>
+          <div class="video-info">
+            <a class="video-title-link">
+              <p class="video-title">
+                PANDA 1
+              </p>
+            </a>
+            <p class="video-author">
+              itsmortilto
+            </p>
+            <p class="video-stats">
+              Klippet av itsmortilto
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="video-preview">
+        <div class="thumbnail-row">
+          <a href="https://www.twitch.tv/itsmortilto/clip/ColorfulWonderfulKoupreyDxAbomb-GxNAZlQo1VWbJDGT" target="_blank" class="video-title-link">
+            <img class="thumbnail" src="pictures/AT-cm_FuaF6xsTQGZUKNVVmyQxkw-preview-260x147.jpg">
+          </a>
+          <div class="video-time">0:25</div>
+          <div class="video-views">57 views</div>
+          <div class="video-posted-time">for 2 years ago</div>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="pictures/16676_IGDB-52x72.jpg">
+          </div>
+          <div class="video-info">
+            <a href="" target="_blank" class="video-title-link">
+              <p class="video-title">
+                AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+              </p>
+            </a>
+            <p class="video-author">
+              itsmortilto
+            </p>
+            <p class="video-stats">
+              Klippet av itsmortilto
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="video-preview">
+        <div class="thumbnail-row">
+          <a href="https://www.twitch.tv/itsmortilto/clip/BoredPunchyTomatoOhMyDog-CYAML9oRaSQ07VVK?filter=clips&range=all&sort=time" target="_blank" class="video-title-link">
+            <img class="thumbnail" src="pictures/preview-5.jpg">
+          </a>
+          <div class="video-time">0:20</div>
+          <div class="video-views">28 views</div>
+          <div class="video-posted-time">for 4 years ago</div>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="pictures/32982_IGDB-52x72.jpg">
+          </div>
+          <div class="video-info">
+            <a class="video-title-link">
+              <p class="video-title">
+                wut
+              </p>
+            </a>
+            <p class="video-author">
+              itsmortilto
+            </p>
+            <p class="video-stats">
+              Klippet av itsmortilto
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="video-preview">
+        <div class="thumbnail-row">
+          <a href="https://www.twitch.tv/itsmortilto/clip/TemperedModernClipsmomKeepo-tj4NsgbyS36-DsUz?filter=clips&range=all&sort=time" target="_blank" class="video-title-link">
+            <img class="thumbnail" src="pictures/preview-7.jpg">
+          </a>
+          <div class="video-time">0:28</div>
+          <div class="video-views">25 views</div>
+          <div class="video-posted-time">for 4 years ago</div>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="pictures/518711_IGDB-52x72.jpg">
+          </div>
+          <div class="video-info">
+            <a class="video-title-link">
+              <p class="video-title">
+                HERE U ARE MORT
+              </p>
+            </a>
+            <p class="video-author">
+              itsmortilto
+            </p>
+            <p class="video-stats">
+              
+              Klippet av smudgeooo
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="video-preview">
+        <div class="thumbnail-row">
+          <a href="https://www.twitch.tv/itsmortilto/clip/AmazonianGrossSalmonKreygasm-OgbddA7vgoemA64e?filter=clips&range=all&sort=time" target="_blank" class="video-title-link">
+            <img class="thumbnail" src="pictures/preview-8.jpg">
+          </a>
+          <div class="video-time">0:30</div>
+          <div class="video-views">16 views</div>
+          <div class="video-posted-time">for 4 years ago</div>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="pictures/33214-52x72.jpg">
+          </div>
+          <div class="video-info">
+            <a class="video-title-link">
+              <p class="video-title">
+                Im back![ fortnite
+              </p>
+            </a>
+            <p class="video-author">
+              itsmortilto
+            </p>
+            <p class="video-stats">
+              Klippet av itsmortilto
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Footer section with more info and links -->
+    <div class="footer-section" id="about">
+
+      <div class="ready-section">  
+
+        <p class="more-chaos">Ready for more chaos?</p>
+        <p class="madness-part">Join the stream live and be part of the madness.</p>
+
+        <div class="buttons">
+          <a href="https://www.twitch.tv/itsmortilto" target="_blank" class="follow-button">Follow on Twitch</a>
+          <a href="https://discord.gg/s2Mzpp5uAS" target="_blank" class="discord-button">Join the Discord</a>
+        </div>
+      </div>
+
+
+      <div class="community-section">
+        <h3 class="community-rules">Community Rules</h3>
+        <ul class="rule-list">
+          <li>Be respectful</li>
+          <li>No spam</li>
+          <li>No hate speech</li>
+          <li>Have fun</li>
+        </ul>
+      </div>
+
+      <div class="footer-content">
+        <p class="footer-title">ItsMortilto</p>
+        <p class="entertainment">Funny clips &bullet; Chaotic moments &bullet; Live streaming</p>
+        <p class="business-inquiries">Business inquiries: contact@email.com</p>
+        <p class="copyright">© <span id="year"></span> ItsMortilto. All rights reserved.</p>
+      </div>
+    </div>
+
+    <script>
+      // JavaScript to dynamically update the year in the footer
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+
+    <script>
+      // JavaScript function to scroll to the About Us section when the button is clicked
+      function scrollToAbout() {
+        document.getElementById('about').scrollIntoView({ behavior: 'smooth' });
+      }
+    </script>
+
+    <script>
+      document.getElementById('clipFlexBtn').addEventListener('click', function() {
+        window.location.href = 'clips.html';
+      });
+    </script>
+
+  </body>
+</html>

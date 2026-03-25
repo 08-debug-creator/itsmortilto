@@ -1,0 +1,118 @@
+.header {
+  height: 80px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+
+  border-bottom-right-radius: 12px;
+  border-bottom-left-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  border-bottom-style: none;
+  backdrop-filter: blur(50px);  
+  cursor: pointer;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  background: linear-gradient(to bottom right, rgb(90, 18, 158), rgb(75, 9, 55));
+}
+
+
+.left-section {
+  display: flex;
+  align-items: center;
+  margin-right: 0;
+}
+
+.mortilto-logo {
+  height: 165px;
+  margin-left: -20px;
+}
+
+.right-section {
+  width: auto;
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-shrink: 0;
+}
+
+.bar1, .bar2, .bar3 {
+  width: 24px;
+  height: 3px;
+  background-color: rgb(148, 148, 148);
+  margin-bottom: 4px;
+  margin-right: 8px;
+  margin-left: 7px;
+  border-radius: 12px;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+.clip, .about, .twitch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-right: 20px;
+  box-shadow: 0 1px 7px rgba(219, 114, 114, 0.8);
+  background-color: transparent;
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+}
+
+.clip {
+  color: rgb(255, 223, 223); 
+}
+
+.about {
+  color: rgb(255, 206, 206);
+}
+
+.twitch {
+  color: rgb(230, 204, 255);
+  padding-left: 6px;
+  padding-right: 6px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  font-size: 18px;
+}
+
+
+.hamburger-menu-container .tooltip {
+  font-family: Roboto, Arial;
+  position: absolute;
+  background-color: gray;
+  color: white;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 2px;
+  font-size: 12px;
+  bottom: -10px;
+  opacity: 0;
+  transition: opacity 0.15s;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.hamburger-menu-container .tooltip {
+  right: 4px;
+}
+
+.hamburger-menu-container:hover .tooltip {
+  opacity: 1;
+}
+
